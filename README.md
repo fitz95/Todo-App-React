@@ -31,9 +31,9 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Book library- <a name="about-project"></a>
+# 📖 Todo App- <a name="about-project"></a>
 
-**Book library-** is a Web App that adds and deletes books.
+**Todo App -** is a Web App that adds and deletes books.
 
 ## 🛠 Built With <a name="built-with"></a>
 VS Code
@@ -46,6 +46,8 @@ VS Code
   <ul>
     <li>HTML</li>
     <li>CSS</li>
+    <li>JS</li>
+    <li>Webpack</li>
   </ul>
 </details>
 
@@ -77,12 +79,13 @@ You would be able see later a Live Version of this libray deployed with Github p
 To get a local copy up and running, follow these steps.
 1 clone the repo
 2 extract the files and you good to go
+3 install all necessary dependencies 
 
 ### Prerequisites
 
 In order to run this project you need:
 
-No Prerequisite 
+Webpack 
 
 
 ### Setup
@@ -106,7 +109,8 @@ Install this project with:
 
 cd my-project 
 and then clone
-No installation required 
+Install dependencies
+install webpack
 
 ### Usage
 
@@ -136,9 +140,6 @@ You can deploy this project using Heroku, Netlify or any free hosting platform
 - Twitter: [@twitterhandke](https://twitter.com/nsonggerald/)
 - linkedIn: [@linkedinhandle](https://www.linkedin.com/in/nsong-asoh/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/teitonny/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,6 +184,7 @@ I would like to thank the Microverse team and also
 - **[Is the site easy to set up ?]**
 
   - It is very easy to setup just an html and css page
+  - just install all the dependencies
 
 - **[Are ther any prerequisite you need ?]**
 
