@@ -24,18 +24,16 @@ class TodoList {
       document.getElementById(`${todoId}-${todoId}`).style.display = 'none';
       document.getElementById(`${todoId}`).setAttribute('readonly', true);
       this.todostorage[todoId].description = document.getElementById(
-        `${todoId}`
+        `${todoId}`,
       ).value;
       localStorage.setItem('todoList', JSON.stringify(this.todostorage));
     };
   };
 
   remove = (todoId) => {
-    const filterFunction = (todo) => {
-      return todo.index !== parseInt(todoId, 10);
-    };
+    const filterFunction = (todo) => todo.index !== parseInt(todoId, 10);
     const filteredTodos = this.todostorage.filter(filterFunction);
-    for (let i = 0; i < filteredTodos.length; i++) {
+    for (let i = 0; i < filteredTodos.length; i += 1) {
       filteredTodos[i].index = i;
     }
     this.displayBooks();
@@ -72,8 +70,7 @@ class TodoList {
       input.addEventListener('click', (e) => {
         e.preventDefault();
         input.removeAttribute('readonly');
-        document.getElementById(`${e.target.id}-${e.target.id}`).style.display =
-          'flex';
+        document.getElementById(`${e.target.id}-${e.target.id}`).style.display = 'flex';
         this.descChange(e.target.id);
       });
     });
