@@ -1,17 +1,13 @@
-const displayTodo = (todoList, todoDiv) => {
-  const todoSorted = todoList.sort((a, b) => a.index - b.index);
+const displayTodo = (todo, todoDiv) => {
   todoDiv.innerHTML = '';
-  todoSorted.forEach((todo) => {
-    const { description, index } = todo;
-    todoDiv.innerHTML += `
-    <div class="div-flex">
+  todoDiv.innerHTML += `
+    <div id=${todo.index} class="div-flex">
         <div class="activity-flex">
             <input type="checkbox"/>
-            <p>${description}</p>
+            <input placeholder= ${description} disabled></input>
         </div>
-        <i  id=${index} class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        <i  id=${todo.index} class="fa fa-ellipsis-v" aria-hidden="true"></i>
     </div>
       `;
-  });
 };
 export default displayTodo;
