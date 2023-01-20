@@ -109,6 +109,6 @@ input.disabled {
 }
 
 /* text checkbox */
-input[type=checkbox]:checked + label {
+input[type=checkbox]:checked + input {
   text-decoration: line-through;
 }
