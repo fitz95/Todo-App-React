@@ -1,7 +1,30 @@
 import './style.css';
-import todoList from './modules/todo.js';
-import displayTodo from './modules/display.js';
+import TodoList from './modules/todoclass.js';
 
-const todoListDiv = document.getElementById('activity-div');
+const clear = document.getElementById('clear');
+const form = document.getElementById('addForm');
+const todoDesc = document.getElementById('todoactivityinput');
+const booked = new TodoList();
 
-displayTodo(todoList, todoListDiv);
+window.onload = () => {
+  booked.displayBooks();
+};
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  booked.addBook(todoDesc.value);
+  form.reset();
+  booked.displayBooks();
+});
+
+clear.addEventListener('click', (e) => {
+  e.preventDefault();
+  const storage = booked.todostorage;
+  const clearFunc = (todo) => todo.complete === false;
+  const clearedTodos = storage.filter(clearFunc);
+  booked.todostorage = clearedTodos;
+  booked.RearrangeArray();
+  localStorage.setItem('todoList', JSON.stringify(clearedTodos));
+  booked.displayBooks();
+});
+//
