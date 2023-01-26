@@ -14,7 +14,7 @@ describe('add a task to list', () => {
     localStorage.clear();
     tasks.addBook('Do Laundry');
     expect(localStorage.getItem('todoList')).toBe(
-      JSON.stringify([{ description: 'Do Laundry', complete: false, index: 0 }])
+      JSON.stringify([{ description: 'Do Laundry', complete: false, index: 0 }]),
     );
   });
 
@@ -24,7 +24,7 @@ describe('add a task to list', () => {
       JSON.stringify([
         { description: 'Laundry', complete: false, index: 0 },
         { description: 'Cooking', complete: false, index: 1 },
-      ])
+      ]),
     );
   });
 });
