@@ -17,15 +17,17 @@ class TodoList {
     return this.todostorage;
   };
 
-  descChange = (todoId) => {
-    document.getElementById(`${todoId}-${todoId}`).onclick = () => {
-      document.getElementById(`${todoId}-${todoId}`).style.display = 'none';
-      document.getElementById(`${todoId}`).setAttribute('readonly', true);
-      this.todostorage[todoId].description = document.getElementById(
-        `${todoId}`,
-      ).value;
-      localStorage.setItem('todoList', JSON.stringify(this.todostorage));
-    };
+  clear = () => {
+    const storage = this.todostorage;
+    const clearFunc = (todo) => todo.complete === false;
+    const clearedTodos = storage.filter(clearFunc);
+    this.todostorage = clearedTodos;
+    this.RearrangeArray();
+    localStorage.setItem('todoList', JSON.stringify(clearedTodos));
+  }
+  descChange = (todoId, value) => {
+    this.todostorage[Number(todoId)].description = value;
+    localStorage.setItem('todoList', JSON.stringify(this.todostorage));
   };
 
   checkbox = (todoId) => {
@@ -36,7 +38,6 @@ class TodoList {
   remove = (todoId) => {
     const filterFunction = (todo) => todo.index !== parseInt(todoId, 10);
     const filteredTodos = this.todostorage.filter(filterFunction);
-    // this.displayBooks();
     this.todostorage = filteredTodos;
     this.RearrangeArray();
     localStorage.setItem('todoList', JSON.stringify(filteredTodos));
@@ -83,9 +84,16 @@ class TodoList {
         e.preventDefault();
         input.removeAttribute('readonly');
         document.getElementById(`${e.target.id}-${e.target.id}`).style.display = 'flex';
-        this.descChange(e.target.id);
       });
+      input.addEventListener('input', (e) => {
+        this.descChange(e.target.id, e.target.value);
+        document.getElementById(`${e.target.id}-${e.target.id}`).onclick = () => {
+          document.getElementById(`${e.target.id}-${e.target.id}`).style.display = 'none';
+          document.getElementById(`${e.target.id}`).setAttribute('readonly', true);
+        };
+      })
     });
+
     Array.from(checkboxes).forEach((input) => {
       input.addEventListener('change', (e) => {
         e.preventDefault();
