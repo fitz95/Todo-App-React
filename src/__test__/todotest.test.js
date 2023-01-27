@@ -9,7 +9,7 @@ describe('add a task to list', () => {
   test("add a task 'Laundry' to the local storage and check if it exists on the local storage ", () => {
     tasks.addBook('Laundry');
     expect(localStorage.getItem('todoList')).toBe(
-      JSON.stringify([{ description: 'Laundry', complete: false, index: 0 }])
+      JSON.stringify([{ description: 'Laundry', complete: false, index: 0 }]),
     );
   });
 
@@ -19,7 +19,7 @@ describe('add a task to list', () => {
       JSON.stringify([
         { description: 'Laundry', complete: false, index: 0 },
         { description: 'Cooking', complete: false, index: 1 },
-      ])
+      ]),
     );
   });
   test("add a task 'Cooking' to the local storage and check if it exists on the local storage ", () => {
@@ -47,7 +47,7 @@ describe('remove task from the todo list ', () => {
   test('remove  a task with id 1  from  the local storage and check if it exists on the local storage', () => {
     tasks.remove('1');
     expect(localStorage.getItem('todoList')).toBe(
-      JSON.stringify([{ description: 'Laundry', complete: false, index: 0 }])
+      JSON.stringify([{ description: 'Laundry', complete: false, index: 0 }]),
     );
   });
 });
@@ -56,7 +56,7 @@ describe('edit complete status and change complete value from false to true', ()
   test('should return complete property  of object with id 0 to be true ', () => {
     tasks.checkbox('0');
     expect(localStorage.getItem('todoList')).toBe(
-      JSON.stringify([{ description: 'Laundry', complete: true, index: 0 }])
+      JSON.stringify([{ description: 'Laundry', complete: true, index: 0 }]),
     );
   });
 });
@@ -73,7 +73,7 @@ describe('updating the task description functionailty ', () => {
     tasks.addBook('Swimming');
     tasks.descChange('0', 'Driving');
     expect(localStorage.getItem('todoList')).toBe(
-      JSON.stringify([{ description: 'Driving', complete: false, index: 0 }])
+      JSON.stringify([{ description: 'Driving', complete: false, index: 0 }]),
     );
   });
 });
@@ -98,7 +98,7 @@ describe('Testing Dom Manipulation functionalities', () => {
             `;
       });
       const todoArr = Array.from(
-        todoActivityDiv.getElementsByClassName('div-flex')
+        todoActivityDiv.getElementsByClassName('div-flex'),
       );
       return todoArr.length;
     });

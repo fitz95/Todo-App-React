@@ -25,6 +25,7 @@ class TodoList {
     this.RearrangeArray();
     localStorage.setItem('todoList', JSON.stringify(clearedTodos));
   }
+
   descChange = (todoId, value) => {
     this.todostorage[Number(todoId)].description = value;
     localStorage.setItem('todoList', JSON.stringify(this.todostorage));
@@ -91,7 +92,7 @@ class TodoList {
           document.getElementById(`${e.target.id}-${e.target.id}`).style.display = 'none';
           document.getElementById(`${e.target.id}`).setAttribute('readonly', true);
         };
-      })
+      });
     });
 
     Array.from(checkboxes).forEach((input) => {
