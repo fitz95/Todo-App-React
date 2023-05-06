@@ -36,7 +36,7 @@ class TodoList {
   remove = (todoId) => {
     const filterFunction = (todo) => todo.index !== parseInt(todoId, 10);
     const filteredTodos = this.todostorage.filter(filterFunction);
-    this.displayBooks();
+    // this.displayBooks();
     this.todostorage = filteredTodos;
     this.RearrangeArray();
     localStorage.setItem('todoList', JSON.stringify(filteredTodos));
