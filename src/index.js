@@ -1,7 +1,7 @@
 import './style.css';
 import TodoList from './modules/todoclass.js';
 
-const clear = document.getElementById('clear');
+const clearbtn = document.getElementById('clear');
 const form = document.getElementById('addForm');
 const todoDesc = document.getElementById('todoactivityinput');
 const booked = new TodoList();
@@ -17,14 +17,9 @@ form.addEventListener('submit', (e) => {
   booked.displayBooks();
 });
 
-clear.addEventListener('click', (e) => {
+clearbtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const storage = booked.todostorage;
-  const clearFunc = (todo) => todo.complete === false;
-  const clearedTodos = storage.filter(clearFunc);
-  booked.todostorage = clearedTodos;
-  booked.RearrangeArray();
-  localStorage.setItem('todoList', JSON.stringify(clearedTodos));
+  booked.clear();
   booked.displayBooks();
 });
 //
