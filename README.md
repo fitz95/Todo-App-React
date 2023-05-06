@@ -20,9 +20,9 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Todo App- <a name="about-project"></a>
+# 📖 Todo App Raect - <a name="about-project"></a>
 
-**Todo App -** is a Web App that adds and deletess books.
+**Todo App -** is a Web App that adds and deletes books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -75,7 +75,7 @@ Clone this repository to your desired folder:
 
 cd my-folder
 
-git clone https://github.com/fitz95/Portfolio-Microverse-/
+git clone https://github.com/fitz95/Todo-App-React.git
 Example commands:
 
 ```sh

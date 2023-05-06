@@ -105,7 +105,6 @@ describe('Testing Dom Manipulation functionalities', () => {
     });
     expect(displayList()).toBe(1);
   });
-  });
 });
 
 describe('remove task with specific id from list', () => {
